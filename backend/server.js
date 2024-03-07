@@ -3,17 +3,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const userRoute = require("../backend/routes/userRoute")
-
+const userRoute = require("../backend/routes/userRoute");
+const errorHandler = require("../backend/middleWare/errorMiddleWare");
 const app = express();
 
 //middlewares
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //router middlewares
-app.use("/api/users", userRoute)
+app.use("/api/users", userRoute);
 
 //routes
 app.get("/", (req, res) => {
@@ -21,9 +21,9 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-
+//Error middleware
+app.use(errorHandler);
 //connect do db and start server
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
