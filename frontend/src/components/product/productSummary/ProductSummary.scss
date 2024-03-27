@@ -1,0 +1,31 @@
+.product-summary {
+  width: 100%;
+  .info-summary {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  border: 1px solid #ccc;
+  // border-bottom: 3px solid var(--light-blue);
+  padding: 5px;
+  background-color: #f5f6fa;
+}
+
+.card1 {
+  background-color: #989898;
+  border-radius: 10px;
+}
+.card2 {
+  background-color: #32963d;
+  border-radius: 10px;
+}
+.card3 {
+  background-color: #c41849;
+  border-radius: 10px;
+}
+.card4 {
+  background-color: #03a5fc;
+  border-radius: 10px;
+}
